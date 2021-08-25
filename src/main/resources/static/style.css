@@ -23,10 +23,10 @@ body{
   grid-auto-flow: row;
   grid-template-areas:
     "display display display display"
-    "AC PM . divide"
+    "AC PM . division"
     "n7 n8 n9 multiplication"
-    "n4 n5 n6 minus"
-    "n1 n2 n3 plus"
+    "n4 n5 n6 substraction"
+    "n1 n2 n3 addition"
     "n0 point equals equals";
   width: 40%;
   min-width: 300px;
@@ -130,10 +130,10 @@ body{
 .n9 { grid-area: n9; }
 .AC { grid-area: AC; }
 .PM { grid-area: PM; }
-.divide { grid-area: divide; }
+.division { grid-area: division; }
 .multiplication { grid-area: multiplication; }
-.minus { grid-area: minus; }
-.plus { grid-area: plus; }
+.substraction { grid-area: substraction; }
+.addition { grid-area: addition; }
 .n0 { grid-area: n0; }
 .point { grid-area: point; }
 .equals { grid-area: equals; }

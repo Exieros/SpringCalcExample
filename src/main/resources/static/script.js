@@ -78,8 +78,18 @@ function init() {
 		$('.operation').removeClass('operationSelected');
 		console.log(buff, dispNum, operation)
 		send(buff, dispNum, operation, function(a){
-			let res = parseFloat(JSON.parse(a).res.replace(',','.'));
-			dispNum = res.toString().replace('.',',');
+			//let response = parseFloat(JSON.parse(a).res.replace(',','.'));
+			let response = JSON.parse(a);
+			if(!response.success){
+			    console.log(response.description);
+			    return;
+			}
+			let result = response.res;
+			console.log(result)
+
+			if(result.toString().includes('.'))
+			    result = result.toFixed( maxNumbers - result.toString().split('.')[0].length )
+			dispNum = result.toString().replace(/0*$/,"").replace('.',',');
 			setDisp(dispNum);
 			afterequal = true;
 		})
@@ -101,6 +111,6 @@ function send(num1, num2, operation, callback){
 			callback(xhr.response);
 		}
 	}
-	xhr.open('GET', `http://localhost:8080/${operation}?num1=${num1.replace(',','.')}&num2=${num2.replace(',','.')}`, true);
+	xhr.open('GET', `http://localhost:8080/math/${operation}?num1=${num1.replace(',','.')}&num2=${num2.replace(',','.')}`, true);
 	xhr.send('');
 }
