@@ -1,0 +1,140 @@
+body{
+  background-color: #26272B;
+  padding: 50px;
+}
+
+@font-face {
+  font-family: 'digital';
+  src:  url('digital.woff') format('woff'),
+        url('digital.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'oblique';
+  src:  url('oblique.woff') format('woff'),
+        url('oblique.woff') format('woff');
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "display display display display"
+    "AC PM . divide"
+    "n7 n8 n9 multiplication"
+    "n4 n5 n6 minus"
+    "n1 n2 n3 plus"
+    "n0 point equals equals";
+  width: 40%;
+  min-width: 300px;
+  min-height: 400px;
+  background-color: #f0f8ff;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 28px -9px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(52,57,63,1);
+}
+
+/*
+.dig{
+  display: inline-block;
+  width: 3vw;
+}
+*/
+
+.display{
+  border-radius: 10px;
+  box-shadow: inset 3px 15px 45px rgba(0,255,0,0.1), 
+              0px 0px 20px 0px rgba(0,100,0,0.25);
+  font-family: "digital";
+  color: #00FF0055;
+  text-align: right;
+  font-size: 5vw;
+  letter-spacing: 0.5vw;
+  line-height: 8vw;
+  padding-right: 2vw;
+  height: 8vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  background-color: #2F4F4F;
+}
+
+.digits{
+  width: 95%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  color: #00FF0015;
+}
+
+.digits > div{
+  width: 9%;
+}
+
+#calcDisplay{
+  color: #00FF0099;
+}
+
+.button{
+  border-radius: 6px;
+  box-shadow: 10px 10px 20px -10px rgba(0,0,0,0.4);
+  background: radial-gradient(circle, rgba(91,140,179,1) 0%, rgba(0,125,224,1) 100%);
+  font-size: 4vw;
+  height: 7vw;
+  min-height: 50px;
+  font-family: "oblique";
+  color: #2A2F35;
+  text-align: center;
+  line-height: 7.5vw;
+  user-select: none;
+}
+
+.button:hover{
+  transition: all 0.2s;
+  background: radial-gradient(circle, rgba(91,140,179,1) 0%, rgba(0,105,204,1) 70%);
+  box-shadow: 10px 10px 20px -10px rgba(0,0,0,0.8);
+  color: #1A1F25;
+  transform: translate(0px,-2px);
+}
+
+.button:active{
+  transition-duration: 0.1s;
+  background: radial-gradient(circle, rgba(91,140,179,1) 0%, rgba(0,105,204,1) 50%);
+  box-shadow: 10px 10px 20px -10px rgba(0,0,0,0.4);
+  transform: translate(0px,0px);
+  color: #2A2F35;
+}
+
+.operationSelected{
+  transition-duration: 0.1s;
+  background: radial-gradient(circle, rgba(91,140,179,1) 0%, rgba(0,105,204,1) 50%);
+  box-shadow: 10px 10px 20px -10px rgba(0,0,0,0.4);
+  transform: translate(0px,0px);
+  color: #2A2F35;
+}
+
+.n1 { grid-area: n1; }
+.n2 { grid-area: n2; }
+.n3 { grid-area: n3; }
+.n4 { grid-area: n4; }
+.n5 { grid-area: n5; }
+.n6 { grid-area: n6; }
+.n7 { grid-area: n7; }
+.n8 { grid-area: n8; }
+.n9 { grid-area: n9; }
+.AC { grid-area: AC; }
+.PM { grid-area: PM; }
+.divide { grid-area: divide; }
+.multiplication { grid-area: multiplication; }
+.minus { grid-area: minus; }
+.plus { grid-area: plus; }
+.n0 { grid-area: n0; }
+.point { grid-area: point; }
+.equals { grid-area: equals; }
+.display { grid-area: display; }
