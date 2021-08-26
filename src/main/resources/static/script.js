@@ -9,7 +9,6 @@ function init() {
 	setDisp(dispNum);
 
 	$( '.num' ).click(function() {
-
 		let num = $(this).text().trim();
 
 		if( num==',' && dispNum.includes(',') )
@@ -32,7 +31,6 @@ function init() {
 			setDisp(dispNum);
 
 		}
-
 	});
 
 	$( '.operation' ).click(function() {
