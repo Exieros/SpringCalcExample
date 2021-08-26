@@ -23,9 +23,9 @@ body{
   grid-auto-flow: row;
   grid-template-areas:
     "display display display display"
-    "AC PM . division"
+    "AC PM tobinary division"
     "n7 n8 n9 multiplication"
-    "n4 n5 n6 substraction"
+    "n4 n5 n6 subtraction"
     "n1 n2 n3 addition"
     "n0 point equals equals";
   width: 40%;
@@ -85,7 +85,7 @@ body{
   border-radius: 6px;
   box-shadow: 10px 10px 20px -10px rgba(0,0,0,0.4);
   background: radial-gradient(circle, rgba(91,140,179,1) 0%, rgba(0,125,224,1) 100%);
-  font-size: 4vw;
+  font-size: 3vw;
   height: 7vw;
   min-height: 50px;
   font-family: "oblique";
@@ -132,8 +132,9 @@ body{
 .PM { grid-area: PM; }
 .division { grid-area: division; }
 .multiplication { grid-area: multiplication; }
-.substraction { grid-area: substraction; }
+.subtraction { grid-area: subtraction; }
 .addition { grid-area: addition; }
+.tobinary { grid-area: tobinary; }
 .n0 { grid-area: n0; }
 .point { grid-area: point; }
 .equals { grid-area: equals; }
